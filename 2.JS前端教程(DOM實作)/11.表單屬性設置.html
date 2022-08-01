@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" value="請輸入">
+    <!-- disabled(禁用) -->
+    <button>按鈕</button>
+    <input type="checkbox" name="" id="checkbox">
+    <script>
+        // -----更改屬性-----
+        let input = document.querySelector("input")
+        // 修改/設置值 
+        input.value = "你好"
+        // 不讓人看見
+        input.type = "password"
+
+        // -----啟用按鈕-----
+        // 獲取元素
+        let btn = document.querySelector("button")
+        // 讓按鈕禁用
+        btn.disabled = true //false
+
+        // -----勾選複選框-----
+        let checkbox = document.querySelector("#checkbox")
+        checkbox.checked = true
+    </script>
+</body>
+
+</html>

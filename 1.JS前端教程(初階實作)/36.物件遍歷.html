@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.遍歷陣列
+        let arr = [1, 2, 3, 4, 5];
+        for (let k in arr) {
+            // 打印陣列的索引(但是是字符串)
+            console.log(k);
+            // 不推薦用此方法遍歷陣列
+            console.log("遍歷陣列" + arr[k]);
+        }
+        let obj = {
+            uname: "小明",
+            age: 18,
+            gender: "男"
+        };
+
+        // 1.遍歷物件
+        for (let key in obj) {
+            // 打印屬姓名
+            // console.log(key);
+            // 這樣寫是錯誤的，相當於obj."屬姓名"  obj."uname"
+            // console.log(obj.key);
+
+            // 要用物件[key]
+            console.log("遍歷物件:"+obj[key]);
+        }
+
+    </script>
+</body>
+
+</html>

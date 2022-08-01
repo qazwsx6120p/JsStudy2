@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.用戶輸入
+        let second = +prompt("請輸入秒數:"); //<-- +prompt()轉換為數字類型
+        // 2.封裝函數
+        function getTime(t) {
+            // console.log(t);
+            // 3.轉換
+            // 小時 h = parseInt(總秒數 / 60 / 60 % 24 )
+            // 分鐘 m = parseInt(總秒數 / 60 % 60 )
+            // 秒數 s = parseInt(總秒數 % 60  )
+
+            let h = parseInt(t / 60 / 60 % 24);
+            let m = parseInt(t / 60 % 60);
+            let s = parseInt(t % 60);
+            // console.log(h,m,s);
+
+            // 補0不足10要補0
+            h = h < 10 ? "0" + h : h;
+            m = m < 10 ? "0" + m : m;
+            s = s < 10 ? "0" + s : s;
+            // console.log(h, m, s);
+            return `轉換完畢之後是${h}小時${m}分鐘${s}秒`
+
+        }
+        let timer = getTime(second);
+        document.write(timer)
+    </script>
+</body>
+
+</html>

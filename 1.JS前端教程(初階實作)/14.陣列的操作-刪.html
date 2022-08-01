@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = ["pink", "hotpink", "blue"];
+
+        // 從陣列最後面新增一個
+        // console.log(arr.push("deepink")); 返回長度
+
+        // -----刪除陣列最後一個元素-----
+        arr.pop();
+        console.log("刪除陣列最後一個元素" + arr);
+
+        // -----刪除陣列第一個元素-----
+        arr.shift()
+        console.log("刪除陣列第一個元素" + arr);
+
+
+        // 刪除中間的元素
+        let arr2 = ["pink", "hotpink", "blue"];
+
+        // -----從陣列中刪除特定元素-----
+
+        // arr.splice(起始位置，刪除幾個元素)
+
+        arr2.splice(1, 1)
+        // arr2.splice(1) <--全部刪除，從第一個刪到最後
+        console.log("刪除中間的元素:" + arr2);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

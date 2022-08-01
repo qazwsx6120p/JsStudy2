@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 求實參的和
+        function getSum() {
+            // arguments為動態參數 只存在函數內
+            // 可以將實參轉為偽陣列
+            // console.log(arguments);
+            let sum = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                sum = sum + arguments[i]
+            }
+            console.log(sum);
+        }
+        getSum(2, 3, 4);
+    </script>
+</body>
+
+</html>

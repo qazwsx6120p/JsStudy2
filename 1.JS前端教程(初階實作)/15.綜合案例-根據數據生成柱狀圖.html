@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            width: 700px;
+            height: 300px;
+            border-left: 1px solid pink;
+            margin: 50px auto;
+            justify-content: space-around;
+            align-items: flex-end;
+            text-align: center;
+        }
+
+        .box>div {
+            display: flex;
+            width: 50px;
+            background-color: pink;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box div span {
+            margin-top: -20px;
+        }
+
+        .box div h4 {
+            margin-bottom: -35px;
+            width: 70px;
+            margin-left: -10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        // 1.四次彈框效果
+        // 聲明一個新的陣列
+        let dataArr = [];
+        for (let i = 1; i <= 4; i++) {
+            // 將輸入的數據推進空陣列中
+            dataArr.push(prompt(`請輸入第${i}季度的數據`))
+        }
+        console.log(dataArr);
+        // 盒子頭
+        document.write(`<div class="box">`)
+
+        for (let i = 0; i < dataArr.length; i++) {
+            // 渲染數據
+            document.write(`
+            <div style="height: ${dataArr[i]}px;">
+                <span>${dataArr[i]}</span>
+                <h4>第${i + 1}季度</h4>
+            </div>`
+            )
+        }
+        // 盒子尾
+        document.write(`</div>`)
+    </script>
+</body>
+
+</html>

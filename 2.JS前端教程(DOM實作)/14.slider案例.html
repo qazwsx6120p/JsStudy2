@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QQ音乐10屏轮播图</title>
+    <style>
+        .img-box {
+            width: 700px;
+            height: 320px;
+            margin: 50px auto 0;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-box .tip {
+            width: 700px;
+            height: 53px;
+            line-height: 53px;
+            position: absolute;
+            bottom: 0px;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 10;
+        }
+
+        .img-box .tip h3 {
+            width: 82%;
+            margin: 0;
+            margin-right: 20px;
+            padding-left: 20px;
+            color: #98E404;
+            font-size: 28px;
+            float: left;
+            font-weight: 500;
+            font-family: "Microsoft Yahei", Tahoma, Geneva;
+        }
+
+        .img-box .tip a {
+            width: 30px;
+            height: 29px;
+            display: block;
+            float: left;
+            margin-top: 12px;
+            margin-right: 3px;
+        }
+
+        .img-box ul {
+            position: absolute;
+            bottom: 0;
+            right: 30px;
+            list-style: none;
+            z-index: 99;
+        }
+
+        .pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-box">
+        <img class="pic" src="images/1.jpg" alt="第1张图的描述信息">
+        <div class="tip">
+            <h3 class="text">挑战云歌单，欢迎你来</h3>
+        </div>
+    </div>
+
+    <script>
+        // 数据
+        let data = [
+            {
+                imgSrc: 'images/1.jpg',
+                title: '挑战云歌单，欢迎你来'
+            },
+            {
+                imgSrc: 'images/2.jpg',
+                title: '田园日记，上演上京记'
+            },
+            {
+                imgSrc: 'images/3.jpg',
+                title: '甜蜜攻势再次回归'
+            },
+
+        ]
+
+        // 1. 获取元素  图片  和  h3
+        let pic = document.querySelector('.pic')
+        let text = document.querySelector('.text')
+        // i 记录图片的张数
+        let i = 0;
+        // 2.开启定时器
+        setInterval(() => {
+            i++
+            pic.src = data[i].imgSrc
+            text.innerHTML = data[i].title
+
+            if (i === data.length-1) {
+                i = -1
+            }
+            // 如果 i===date的長度，就===-1
+            // i === data.length - 1 ? i === -1 : i;
+        }, 1000);
+    </script>
+</body>
+
+</html>

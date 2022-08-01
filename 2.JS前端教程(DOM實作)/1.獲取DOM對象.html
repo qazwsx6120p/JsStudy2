@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>盒子</div>
+    <div>盒子2</div>
+    <div class="three">盒子3</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 獲取元素
+        // 只能得到一個元素
+       let div= document.querySelector("div")
+       let div2= document.querySelector(".three")
+       console.log(div);
+       console.log(div2);
+
+       let li = document.querySelector("ul li:last-child")
+       console.log(li);
+
+    </script>
+</body>
+</html>

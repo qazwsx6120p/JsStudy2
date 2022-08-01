@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let row = +prompt("請輸入行數:")
+        let col = +prompt("請輸入行數:")
+
+        // 打印五行五個★
+        // 外層打印行數
+        for (let i = 1; i <= row; i++) {
+            // 內層打印每行幾個
+            for (let j = 1; j <= col; j++) {
+                document.write("★");
+            }
+            // 進行換行顯示
+            document.write("<br>")
+        }
+    </script>
+</body>
+
+</html>

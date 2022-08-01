@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 遍歷json
+        let student = [
+            { name: "小明", age: 45, gender: "男" },
+            { name: "小華", age: 19, gender: "男" },
+            { name: "小九", age: 20, gender: "女" }
+        ];
+        for (let i = 0; i < student.length; i++) {
+            console.log(student[i]);
+            // 打印名子
+            console.log(student[i].name);
+
+        }
+
+        // 使用foreach的方式
+        student.forEach((v, i) => {
+            console.log(v, i);
+        })
+
+    </script>
+
+</body>
+
+</html>

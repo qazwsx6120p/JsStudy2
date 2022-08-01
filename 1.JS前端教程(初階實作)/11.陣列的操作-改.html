@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [];
+        console.log(arr);
+        console.log(arr[0]); //undefind
+
+        // 改陣列
+        // 為陣列添加值
+        arr[0] = 1;
+        arr[1] = 5;
+        console.log(arr);
+
+        // 修改陣列
+        let arr2 = ["pink", "red", "green"];
+        arr[0] = "blue";
+        console.log(arr);
+
+        // 給所有的陣列元素+個老師
+        for (let i = 0; i < arr2.length; i++) {
+            arr2[i] = arr2[i] + "老師"
+        }
+        console.log(arr2);
+    </script>
+</body>
+
+</html>

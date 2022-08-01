@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function fn() {
+        //     // 如果沒有聲明，直接賦值，也當全局變數看，但是強烈不建議
+        //     num = 10
+        // }
+        // fn()
+        // console.log(num);
+
+
+        // function fun(x, y) {
+        //     // 形參也可以看做局部變數
+        //     console.log(x);
+        // }
+        // fun(1, 2);
+        // console.log(x); //錯誤的 
+
+        
+        // 先找局部內的在慢慢往外查找
+        let num = 10;
+        function fune() {
+            let num = 20;
+            function func() {
+                let num = 30;
+                console.log(num);
+            }
+            func();
+        }
+        fune();
+    </script>
+</body>
+
+</html>

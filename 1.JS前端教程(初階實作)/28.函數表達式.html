@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.函數表達式
+        // 函數表達式只能在聲明後使用
+        let fn = function (x, y) {
+            console.log("我是函數表達式");
+            console.log(x + y);
+        };
+        fn(1, 2);
+
+
+        // 函數表達式根據名表達式不同
+        // 2.具名表達式調用可以寫到任何位置
+        function fun() {
+            console.log(1);
+        }
+        fun()
+
+    </script>
+</body>
+
+</html>

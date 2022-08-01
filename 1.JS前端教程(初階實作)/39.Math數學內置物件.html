@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 屬性
+        console.log(Math.PI);
+        // 方法:
+
+        // 向上取整
+        console.log("Math.ceil向上取整1.1: " + Math.ceil(1.1));
+
+        // 向下取整
+        console.log("Math.floor向下取整1.1: " + Math.floor(1.1));
+
+        // 四捨五入
+        console.log("Math.round四捨五入1.1: " + Math.round(1.1));
+        console.log("Math.round四捨五入1.6: " + Math.round(1.6));
+
+        // 向下取整(同時強制轉型成數字，只取數字，並將多餘字符串去除)
+        console.log("parseIn 1.2 : " + parseInt(1.2));
+        console.log("parseIn '1.2' : " + parseInt("1.2"));
+        console.log("parseIn '12px' : " + parseInt("12px"));
+
+        // 取最大值
+        console.log("Math.max取最大值1,2,3,4,5: " + Math.max(1, 2, 3, 4, 5));
+
+        // 取最小值
+        console.log("Math.min取最小值1,2,3,4,5: " + Math.min(1, 2, 3, 4, 5));
+
+        // 取絕對值
+        console.log("Math.abs取絕對值-1: " + Math.abs(-1));
+
+        //  取隨機小數，左避右開
+        console.log(Math.random());
+
+        //  取隨機數，0-10隨機數
+        console.log(Math.floor(Math.random() * 11));
+
+
+        // 抽取陣列隨機值
+        let arr = ["red", "blue", "green"]
+        let random = Math.floor(Math.random() * arr.length)
+        console.log("抽取陣列隨機值"+arr[random]);
+
+        // 生成5-10的隨機數 
+        // 生成n-m的隨機數 
+        // Math.floor(Math.random() * (m - n + 1)+ n) 
+        console.log("生成5-10的隨機數: " +Math.floor(Math.random() * (10 - 5 + 1)+ 5) );
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

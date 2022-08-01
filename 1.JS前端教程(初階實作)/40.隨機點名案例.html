@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let name = ["阿名", "阿保", "阿王", "阿花", "阿劉", "阿清"];
+        // 取得隨機數函數
+        let random = Math.floor(Math.random() * name.length)
+        // 印出陣列的元素
+        document.write(name[random])
+        // splice(起始位置:下標,刪除幾個)刪除已印出的元素
+        name.splice(random, 1)
+        document.write("</br>")
+        document.write(name)
+
+
+    </script>
+</body>
+
+</html>

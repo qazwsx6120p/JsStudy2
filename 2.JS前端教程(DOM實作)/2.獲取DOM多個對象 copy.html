@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 獲取多個元素
+        // 不能直接修改
+        // querySelectorAll 會得到一個偽陣列
+        // 可以使用for forEach遍歷
+        let lis = document.querySelectorAll("ul li")
+        // forEach遍歷
+        for (let i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
+        console.log(lis);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .active {
+            width: 400px;
+            height: 700px;
+            background-color: yellow;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one"></div>
+    <script>
+        let box = document.querySelector("div");
+        // 設置樣式
+        // box.style.width="400px"
+        // box.style.height="700px"
+        // box.style.backgroundColor="blue"
+
+        // 將CSS className加入標籤
+        // 他會覆蓋(原本class)
+        box.className = "one active"
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 物件多級解構
+        const pig = {
+            name: "佩琪",
+            family: {
+                mother: "豬媽",
+                father: "豬爸"
+            },
+            age: 6
+        };
+        // 記得加物件屬姓名
+        const { name, family: { mother, father }, age } = pig;
+        console.log(name);
+        console.log(mother);
+        console.log(father);
+        console.log(age);
+
+        const pig2 = [{
+            name2: "佩琪",
+            family2: {
+                mother2: "豬媽",
+                father2: "豬爸"
+            },
+            age2: 6
+        }];
+        
+        const [{ name2, family2: { mother2, father2 }, age2 }] = pig2;
+        console.log("--------------------");
+        console.log(name2);
+        console.log(mother2);
+        console.log(father2);
+        console.log(age2);
+
+
+    </script>
+</body>
+
+</html>

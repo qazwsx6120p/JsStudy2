@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  每隔多久調用一次
+        //  setInterval(()=>{},毫秒);
+        // setInterval(()=>{
+        //     console.log("每隔1秒顯示");
+        // },1000);
+
+        function show() {
+            console.log("每隔1秒顯示");
+        }
+
+        //  每隔多久調用show
+        let time = setInterval(() => { show() }, 1000);
+        // 幾個定時器
+        console.log(time);
+        // 清除定時器
+        clearInterval(time);
+
+
+    </script>
+</body>
+
+</html>

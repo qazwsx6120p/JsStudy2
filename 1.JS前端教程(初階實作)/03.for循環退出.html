@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 利用for循環輸出1-100歲
+        for (let i = 1; i <= 100; i++) {
+            console.log(i);
+        }
+
+        // 求1-100之間偶數的和
+        let sum = 0;
+        for (let i = 1; i <= 100; i++) {
+            if (i % 2 === 0) {
+                // sum = o + 100 內所有的偶數
+                sum = sum + i
+
+            }
+        }
+        console.log(`求1-100之間偶數的和:${sum}`);
+
+        // 打印五個~
+        for (let i = 1; i <= 5; i++) {
+            console.log("+");
+        }
+
+        // 打印陣列
+        let arr = [1, 2, 3, 4, 5]
+
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+    </script>
+</body>
+
+</html>

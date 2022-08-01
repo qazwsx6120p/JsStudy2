@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let sums = 0
+        // 可給形參=0 假如調用函數沒有給值的話默認是0
+        function getSum(num = 0) {
+            for (let i = 1; i <= num; i++) {
+                sums = sums + i;
+            };
+            console.log(sums);
+        }
+
+        getSum(100);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.聲明物件
+        let pink = {
+            uname: "pink老師",
+            age: 18,
+            gender: "女",
+
+        }
+
+        // 查:物件.屬姓名
+        console.log(pink.uname);
+
+        // 改:物件.屬姓名="屬性值"
+        pink.uname = "red老師";
+
+        // 增:物件.屬姓名="屬性值"
+        pink.hobby = "足球";
+
+        console.log(pink);
+
+        // 刪:delete 屬姓名.屬性值
+        delete pink.hobby
+
+        console.log(pink);
+
+
+        // 查的另外一種屬性 物件["屬姓名"]
+        console.log("物件另種查法"+pink["uname"]);
+
+
+    </script>
+</body>
+
+</html>

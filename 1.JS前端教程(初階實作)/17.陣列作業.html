@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -------找出陣列中，元素為10的下標，有則打印出來，沒有則打印-1-------
+        let arr = [88, 20, 10, 100, 50];
+        let result = -1;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === 10) {
+                result = arr[i]
+            }
+        }
+        console.log("for:" + result);
+
+        let resultFilter = arr.filter((item) => {
+            return item === 10
+        })
+        console.log("filter:" + resultFilter);
+
+        // -----讓用戶輸入5個有效年齡(0-100之間)，放入陣列-----
+        // 必須輸入五個有效年齡，如果是無效年齡，則不能放入陣列內
+
+        let resultArr = [];
+        let arr2 = []
+
+        for (let i = 1; i <= 5; i++) {
+            arr2.push(prompt(i))
+        }
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr2[j] >= 0 && arr2[j] <= 100) {
+                resultArr.push(arr2[j])
+            }
+        }
+        console.log(arr2);
+        console.log(resultArr);
+        // console.log(resultArr);
+
+
+    </script>
+</body>
+
+</html>

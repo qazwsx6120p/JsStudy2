@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 需求:隨機生成1-10之間的數字，用戶輸入一個數
+        // 如果大於該數字，就提示數字猜大了，繼續猜
+        // 如果小於該數字，就提示數字猜小了，繼續猜
+        // 如果猜對了，就顯示猜對了
+
+
+        // 1.隨機生成一個數
+        function getRandom(N, M) {
+            return Math.floor(Math.random() * (M - N + 1) + N)
+        }
+        let random = getRandom(1, 10)
+        console.log(random);
+
+        // 3.設定三次，三次沒猜對就直接退出遊戲(且標示剩餘次數)
+        for (let i = 3; i >= 1; i--) {
+            let num = +prompt("請輸入1-10之間的數字")
+            if (num !== random && num < random) {
+                alert(`您猜小了且剩下${i - 1}次機會`)
+            } else if (num !== random && num > random) {
+                alert(`您猜大了且剩下${i - 1}次機會`)
+            } else {
+                flag = false
+                alert(`恭喜您猜對了`)
+                break;
+            }
+        }
+
+
+        // 3.設定三次，三次沒猜對就直接退出遊戲(flag開關)
+        // let flag = true
+        // for (let i = 1; i <= 3; i++) {
+        //     let num = +prompt("請輸入1-10之間的數字")
+        //     if (num < random) {
+        //         alert(`您猜小了`)
+        //     } else if (num > random) {
+        //         alert(`您猜大了`)
+        //     } else {
+        //         flag = false
+        //         alert(`恭喜您猜對了`)
+        //         break;
+        //     }
+        // }
+        // if (flag) {
+        //     alert("次數已經用完")
+        // }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

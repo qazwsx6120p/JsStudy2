@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 此就為閉包
+        // 內層函數使用到外層函數的變數並調用
+        // 外層函數也調用
+        // 簡單理解:閉包=內層函數+外層函數的變數
+        // function outer() {
+        //     let a= 10;
+        //     function fn() {
+        //         console.log(a);
+        //     }
+        //     fn()
+        // }
+        // outer()
+
+        // ====常見寫法1===
+        // 常見閉包的形式 外部可以使用內部的變數
+        function outer() {
+            let a = 10;
+            function inter() {
+                console.log(a);
+            }
+            // 返回內部函數
+            return inter
+        }
+        // outer() === inter === function inter() { }
+        // const fun = funcion inter() { }
+        const fun = outer()
+        fun(); //調用函數
+        // 外面要使用這個10
+
+        // ====常見寫法2===
+        function outer2() {
+            let a = 10;
+            // 返回內部函數
+            return function () {
+                console.log(a);
+
+            }
+        }
+
+
+        // ====常見寫法3===
+        function outer3() {
+            let a = 10;
+            // 返回內部函數
+            return function () {
+                return a
+            }
+        }
+        const fun1 = outer3()
+        console.log("常見寫法三:" + fun1());
+
+    </script>
+</body>
+
+</html>

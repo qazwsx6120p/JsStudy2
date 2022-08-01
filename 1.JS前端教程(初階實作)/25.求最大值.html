@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -----1.求最大值函數-----
+        function getMax(x, y) {
+            return x > y ? x : y
+        }
+        let re = getMax(1, 2);
+        console.log(re);
+
+        // -----2.求任意陣列的最大值-----
+        function getArrMax(arr) {
+            // 先定義一個變數
+            let max = arr[0];
+            let min = arr[0];
+            console.log(arr);
+
+            for (let i = 1; i < arr.length; i++) {
+                if (max < arr[i]) {
+                    max = arr[i]
+                }
+                // if (min > arr[i]) {
+                //     min = arr[i]
+                // }
+                return [max, min]
+            }
+
+        }
+        console.log("使用for" + getArrMax([1, 2, 4, 2, 4, 7]));
+
+
+        function getArrMax2(arr) {
+
+            let arrMax = [...arr].sort((a, b) => {
+                return a - b
+            });
+
+            let arrMin = [...arr].sort((a, b) => {
+                return b - a
+            });
+
+            return [arrMax[arrMax.length - 1], arrMin[arrMin.length - 1]]
+
+        }
+        let newArr2 = getArrMax2([1, 2, 4, 2, 4, 7]);
+        console.log("使用sort" + newArr2);
+
+    </script>
+</body>
+
+</html>

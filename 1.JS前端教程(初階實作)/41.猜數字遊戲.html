@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 需求:隨機生成1-10之間的數字，用戶輸入一個數
+        // 如果大於該數字，就提示數字猜大了，繼續猜
+        // 如果小於該數字，就提示數字猜小了，繼續猜
+        // 如果猜對了，就顯示猜對了
+
+
+        // 1.隨機生成一個數
+        function getRandom(N, M) {
+            return Math.floor(Math.random() * (M - N + 1) + N)
+        }
+        let random = getRandom(1, 10)
+        console.log(random);
+
+        // 需要循環幾次
+        // true的話繼續猜
+        while (true) {
+            // 2.用戶輸入值
+            let num = +prompt("請輸入一個數字");
+            // 3.判斷輸出
+            if (num > random) {
+                alert("您猜大了")
+            } else if (num < random) {
+                alert("您猜小了")
+
+            } else {
+                alert("您猜對了")
+                break
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

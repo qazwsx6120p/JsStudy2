@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 找陣列中最大值
+        let arr = [2, 6, 1, 7, 4];
+        // max裡面一定要存取最大值
+        // 先給他arr[0]
+        let max = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            // 如果max比陣列元素的值還小，我們就把元素賦值給max
+            if (max < arr[i]) {
+                max = arr[i]
+            }
+        }
+        console.log(max);
+
+        // --------------------------------------------
+        
+        // 找陣列中最小值
+        let min = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            // 如果max比陣列元素的值還小，我們就把元素賦值給max
+            if (max > arr[i]) {
+                max = arr[i]
+            }
+        }
+        console.log(max);
+    </script>
+</body>
+
+</html>

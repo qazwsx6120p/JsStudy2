@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 需求 ：该函数接收一个布尔类型参，表示颜色的格式是
+        // 十六进制还rgbrgbrgb格式 。
+        // 1：如果参数传递的是 true 或者无参数，
+        // 则输出 一个随机十六进制的颜色
+
+        // 2： 如果参数传递的 是falsefalse false ，
+        // 则输出 一个随机 rgbrgbrgb的颜色
+
+        // 3：
+        // 格式function getRandomColor (flag){
+        // }
+        // console.log(getRandomColor(true)); //#ffffff
+        // console.log(getRandomColor(false)); //rgb(255,255,255)
+        // 提示:16進制顏色格式為#ffffff 其中f可以是0-f之間的字符
+        // 提示:rgb顏色格式為rgb(255,255,255) 其中255可以是0-255之間的數字
+
+
+        // 1.自訂意一個顏色函數
+        function getRandomColor(flag = true) {
+            if (flag) {
+                // 3.如果是true 則返回#ffffff
+                // 做字符串拼接
+                let str = "#"
+                let arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"]
+                // 利用for循環隨機抽6次累加到str裡面
+                for (let i = 1; i <= 6; i++) {
+                    // 每次從陣列裡面抽取一個
+                    // random是陣列索引號(是隨機的)
+                    let random = Math.floor(Math.random() * arr.length)
+                    // 用字符串拼接"#"+arr[random]六次
+                    str = str + arr[random]
+                }
+                return str
+
+            } else {
+                // 4.否則false 則返回rgb(255,255,255)
+                // 長度記得+1才能取到255
+                let r = Math.floor(Math.random() * 256)
+                let g = Math.floor(Math.random() * 256)
+                let b = Math.floor(Math.random() * 256)
+
+                return `rgb(${r},${g},${b})`
+            }
+
+        }
+        // 2.調用函數
+        console.log(getRandomColor(false));
+        console.log(getRandomColor(true));
+        console.log(getRandomColor());
+
+        const div = document.querySelector("div")
+        div.style.backgroundColor = getRandomColor()
+
+
+
+
+    </script>
+</body>
+
+</html>

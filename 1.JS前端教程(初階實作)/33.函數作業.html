@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 目標封裝一個函數，可以求任意陣列的和或平均值
+
+        // 函數可以傳遞2個參數，比如 handelData(arr,true)
+        // 參數1:接受實參傳遞過來的陣列
+        // 參數2:步林類型，如果是true或者不傳遞參數是求和操作
+        // 如果傳遞過來的參數是false則是求平均值
+        
+        function arr(arr, boolean = true) {
+            if (boolean === true ) {
+                let sum = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    sum += arr[i]
+                }
+                return sum
+            } else if (boolean === false) {
+                let sum = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    sum += arr[i]
+                }
+                return sum / arr.length
+            }
+
+        }
+        console.log(arr([1, 2, 3]));
+
+    </script>
+</body>
+
+</html>

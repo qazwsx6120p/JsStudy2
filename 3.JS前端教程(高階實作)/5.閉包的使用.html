@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 閉包的應用 
+        // 統計函數調用的次數
+        // 因為i是全局變數容易被修改
+        // let i = 0;
+        // function fn() {
+        //     i++
+        //     console.log(`函數調用的次數${i}`);
+        // }
+        // fn();
+        // fn();
+        // fn();
+
+        // -------------------------------------------
+
+        // 統計函數調用的次數(閉包)
+        function count() {
+            let i = 0;
+            function fn() {
+                i++;
+                console.log(`函數調用的次數${i}`);
+            }
+           return fn
+        }
+       const fun =  count();
+       fun();
+       fun();
+       fun();
+
+        
+
+
+
+    </script>
+</body>
+
+</html>
