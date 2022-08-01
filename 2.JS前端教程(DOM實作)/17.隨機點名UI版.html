@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="qs">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">结束</button>
+    </div>
+
+    <script>
+        // 数据数组
+        let arr = ['马超', '黄忠', '赵云', '关羽', '张飞']
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        // 獲取元素
+        let start = document.querySelector(".start");
+        let end = document.querySelector(".end");
+        let qs = document.querySelector(".qs");
+
+        // timer要是全局變數
+        let timer = 0;
+        let random = 0;
+
+        // 給開始按鈕添加事件
+        start.addEventListener("click", function () {
+            // 隨機抽取數據(快速不斷的抽取)
+            timer = setInterval(() => {
+                random = getRandom(0, arr.length - 1)
+                qs.innerHTML = arr[random]
+            }, 50)
+
+        })
+
+        // 點擊停止定時器
+        end.addEventListener("click", function () {
+            // 停止定時器
+            clearInterval(timer)
+            // 刪除陣列元素
+            arr.splice(random, 1)
+
+            if (arr.length === 1) {
+                start.disabled = true;
+                end.disabled = true;
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

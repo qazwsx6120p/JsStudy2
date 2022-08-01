@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>點擊</button>
+    <script>
+        // 環境物件/變數就是this 他就是個物件
+        function fun() {
+            console.log(this);
+        }
+        // 是window調用
+        window.fun()
+
+        let btn = document.querySelector("button")
+        // 是btn調用
+        btn.addEventListener("click", function () {
+            console.log(this);
+        })
+        
+        // 誰調用this，this就指向誰
+    </script>
+</body>
+
+</html>

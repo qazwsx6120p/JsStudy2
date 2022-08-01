@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 150px;
+            height: 30px;
+            border: 1px solid pink;
+
+        }
+    </style>
+</head>
+
+<body>
+    抽中的選手:<div></div>
+    <button>按鈕</button>
+    <script>
+
+        let box = document.querySelector("div")
+        let btn = document.querySelector("button")
+        // 1.聲明陣列
+        let arr = ["阿寶", "阿劉", "阿球", "阿溪", "阿五"]
+        // 2.生成隨機數函數
+        function getRandom(N, M) {
+            return Math.floor(Math.random() * (M - N + 1) + N)
+        }
+        // 3.生成隨機數
+
+        btn.addEventListener("click", function () {
+            let random = getRandom(0, arr.length - 1);
+            if (arr.length !== 0) {
+                box.innerHTML = arr[random]
+            } else {
+                box.innerHTML = "已點完"
+                btn.disabled = true
+            }
+            arr.splice(random, 1)
+        })
+
+        // 刪除陣列內值
+
+
+    </script>
+</body>
+
+</html>

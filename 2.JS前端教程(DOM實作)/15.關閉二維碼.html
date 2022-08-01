@@ -41,14 +41,15 @@
         <i class="close_btn">x</i>
     </div>
     <script>
-        // 1. 获取元素   事件源 i   关闭的 erweima 
+        // 1. 獲取元素
         let close_btn = document.querySelector('.close_btn')
         let erweima = document.querySelector('.erweima')
-        // 2. 事件监听
-        close_btn.addEventListener('click', function () {
-            // erweima 关闭  他是隐藏的
-            erweima.style.display = 'none'
+        // 2. 事件監聽
+        // 點擊之後加style 
+        close_btn.addEventListener("click",function () {
+            erweima.style.display="none"
         })
+      
     </script>
 </body>
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="controls">
+        <textarea placeholder="說點甚麼" name="" id="area" cols="30" rows="10"></textarea>
+        <div>
+            <span class="useCount">0</span>
+            <span>/</span>
+            <span>200</span>
+            <button id="send">發布</button>
+        </div>
+    </div>
+    <script>
+        let area = document.querySelector("#area")
+        let useCount = document.querySelector(".useCount")
+
+        // 綁定事件 用戶輸入事件 input
+        area.addEventListener("input", function () {
+            // 不斷得到文本的字幅長度
+            // area.value可以得到打入的值
+            console.log(area.value.length);
+            useCount.innerHTML = area.value.length
+        })
+    </script>
+</body>
+
+</html>

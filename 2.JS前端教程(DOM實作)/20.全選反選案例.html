@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 1px solid #c0c0c0;
+      width: 500px;
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    th {
+      background-color: #09c;
+      font: bold 16px "微软雅黑";
+      color: #fff;
+      height: 24px;
+    }
+
+    td {
+      border: 1px solid #d0d0d0;
+      color: #404060;
+      padding: 10px;
+    }
+
+    .allCheck {
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th class="allCheck">
+        <input type="checkbox" name="" id="checkAll"> <span class="all">全選</span>
+      </th>
+      <th>商品</th>
+      <th>商家</th>
+      <th>价格</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米手机</td>
+      <td>小米</td>
+      <td>￥1999</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米净水器</td>
+      <td>小米</td>
+      <td>￥4999</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米电视</td>
+      <td>小米</td>
+      <td>￥5999</td>
+    </tr>
+  </table>
+  <script>
+    // 1. 獲取元素  泉小 和   ck 小複選框
+    let all = document.querySelector('#checkAll')
+    let cks = document.querySelectorAll('.ck')
+    let span = document.querySelector('span')
+    // 2. 事件監聽 全選按鈕
+    all.addEventListener('click', function () {
+      // 3.我們需要做的是把all.checked給下面三個小按鈕
+      // 因為三個按鈕在偽陣列裡面
+      // 點擊all全選框會讓下面的小按鈕都等於all的checked狀態
+      for (let i = 0; i < cks.length; i++) {
+        cks[i].checked = all.checked
+      }
+      // cks.forEach((v) => {
+      //   v.checked = all.checked
+      // })
+      if (all.checked === true) {
+        // 4.修改span的文字
+        span.innerHTML = "取消"
+      } else {
+        span.innerHTML = "全選"
+      }
+    })
+
+    // 5.同時給多個元素綁定相同事件
+    for (let i = 0; i < cks.length; i++) {
+      // 幫每個cks綁定事件
+      cks[i].addEventListener("click", function () {
+        // 只要點擊任何一個小按鈕，都要遍歷所有的小按鈕
+        for (let j = 0; j < cks.length; j++) {
+          // 來看看是不是有沒有框框沒有選中
+          if (cks[j].checked === false) {
+            // 如果有false 則退出循環addEventListener函數
+            all.checked = false
+            span.innerHTML = "全選"
+            return
+          }
+        }
+        // 當我們循環結束，如果帶碼走到這裡，代表沒有false，都被選中了
+        all.checked = true
+        span.innerHTML = "取消"
+      })
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>
