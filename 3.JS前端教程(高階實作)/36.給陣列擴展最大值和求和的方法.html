@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -----自己定義陣列擴展方法，求和 和 最大值-----
+        // 1.我們定義的這個方法，任何一個陣列實例物件都可以使用
+        // 2.自定義的方法寫到陣列的prototype上
+        const arr = [1, 2, 3];
+
+        Array.prototype.max = function () {
+            // 展開運算符
+            // 原型函數裡面的this 指向誰? 實例物件arr
+            return Math.max(...this)
+        }
+
+        Array.prototype.min = function () {
+            // 展開運算符
+            // 原型函數裡面的this 指向誰? 實例物件arr
+            return Math.min(...this)
+        }
+
+        // 調用max方法
+        console.log(arr.max());
+        console.log([4, 5, 6].max());
+        console.log([4, 5, 6].min());
+
+
+        // const arr = [1, 2, 3];
+        // const arr = new Array(1, 2, 3);
+        // console.log(arr);
+
+        // -----自己定義陣列擴展方法，求和 和 最大值-----
+        // 1.我們定義的這個方法，任何一個陣列實例物件都可以使用
+        Array.prototype.sum = function () {
+            return this.reduce((pre, cur) => {
+                return pre + cur
+            }, 0)
+        }
+        console.log("求和:"+[1, 2, 3].sum());
+        console.log("求和:"+[4, 5, 6].sum());
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star() {
+
+        }
+
+        // 實例物件跟構造函數指性向同一個原型
+        let bao = new Star();
+        // 實例物件原型__proto__指向該構造函數的原型物件
+        console.log(bao.__proto__ === Star.prototype); //true
+        // 實例物件原型也有constructor也是指向構造函數
+        console.log(bao.__proto__.constructor === Star); //true
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -----將eyes,head抽取出來(公共的部分放在原型上)-----
+        // 繼承給兩個構造函數
+        const Person = {
+            eyes: 2,
+            head: 1,
+        }
+
+        // -----女人的構造函數-----
+        function Woman() {
+            // this.eyes = 2;
+            // this.head = 1;
+        }
+        Woman.prototype = Person
+        // 指回原本的構造函數
+        Woman.prototype.constructor = Woman
+        const woman = new Woman();
+        console.log(woman.eyes); //2
+        console.log(woman.__proto__); 
+
+
+
+        // -----男人的構造函數-----
+        function Man() {
+            // this.eyes = 2;
+            // this.head = 1;
+        }
+        Man.prototype = Person;
+        Man.prototype.constructor = Man
+        const man = new Man();
+        console.log(man.head);
+        console.log(man.__proto__);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let that
+        // -----構造函數的this指向-----
+        function Star(uname) {
+            // that = this;
+            // 誰調用該屬性就指向誰
+            this.uname = uname
+        }
+
+        // -----原型物件的函數this指向 還是實例物件-----
+        // 誰調用該方法就指向誰
+        Star.prototype.sing = function () {
+            that = this;
+            console.log("唱歌");
+        }
+        
+        // 構造函數的this就是bao
+        const bao = new Star("阿寶");
+        console.log(that === bao);
+
+        // 調用原型內的方法
+        bao.sing();
+    </script>
+</body>
+
+</html>

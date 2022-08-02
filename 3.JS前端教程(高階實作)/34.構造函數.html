@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -----構造函數，公共的屬性和方法-----
+        // 1.將公共的屬性寫到構造函數內
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            // this.sing = function () {
+            //     console.log("唱歌");
+            // };
+        }
+
+        // -----向構造函數的原型物件添加方法-----
+        // 2.公共的方法寫在原型物件上
+        // 這樣可以節省內存空間(不會另外開闢新的內存)
+        // 當不同物件調用同一個方法時指向的是同一個地址
+        Star.prototype.sing = function () {
+            console.log("唱歌");
+        }
+
+        const ldh = new Star("阿寶", 20);
+        const zxy = new Star("阿王", 34);
+
+        zxy.sing()
+        ldh.sing()
+        // 兩個物件訪問Star原型物件的sing函數
+        console.log(zxy.sing() === ldh.sing());
+
+        // 構造函數都有一個原型物件
+        console.dir(Star.prototype)
+    </script>
+</body>
+
+</html>

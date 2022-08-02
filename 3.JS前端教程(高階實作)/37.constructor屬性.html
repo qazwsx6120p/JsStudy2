@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -----------------construtor 單詞 構造函數(指向構造函數)-----------------
+        // 兩個互指
+        // Star.prototype -> construtor
+        // Star.prototype.constructor->Star
+        function Star() {
+
+        }
+        let bao = new Star();
+        console.log(Star.prototype);
+        console.log(Star.prototype.constructor === Star);
+
+        // -----------------construtor應用----------------------
+
+        function Star2() {
+
+        }
+        // 向Star2原型添加方法
+        // Star2.prototype.sing=function(){
+        //     console.log("唱歌");
+        // }
+        // Star2.prototype.dance=function(){
+        //     console.log("跳舞");
+        // }
+        
+        // -----------------向原型添加物件方法-----------------
+        Star2.prototype = {
+            // 這樣寫會蓋掉constructor
+            // 需要重新指回這個原型物件的構造函數
+            constructor: Star2,
+            sing: function () {
+                console.log("唱歌");
+            },
+            dance: function () {
+                console.log("跳舞");
+            }
+        }
+        let bao2 = new Star2();
+
+        console.log( Star2.prototype);
+
+    </script>
+</body>
+
+</html>
