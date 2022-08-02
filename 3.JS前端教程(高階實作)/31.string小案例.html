@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        const gift = "50g茶葉,清洗球";
+        let span = document.querySelectorAll("tag")
+
+        let giftArr = gift.split(",")
+        console.log(giftArr);
+
+        // 根據陣列元素的個數，生成span標籤
+        // 再轉為字符串
+        let str = giftArr.map((v) => {
+            return `<span class="tag">[贈品]${v}</span></br>`
+        }).join("")
+
+        document.querySelector("div").innerHTML = str;
+    </script>
+</body>
+
+</html>

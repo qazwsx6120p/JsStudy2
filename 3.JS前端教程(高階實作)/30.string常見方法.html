@@ -24,8 +24,29 @@
         // ============ substring ============
         // substring()字符串的擷取 substring(開始的索引號,[結束的索引號])
         // 如果省略結束索引，默認取到最後
-        const str2 ="今天晚上真好";
-        console.log(str2.substring(2,4)); //晚上
+        const str2 = "今天晚上真好";
+        console.log(str2.substring(2, 4)); //晚上
+
+        // ============ startsWith ============
+        // startsWith()判斷是不是以某個字符串開頭(返回布林值)
+        const str3 = "判斷是不是以某個字符串開頭";
+        console.log(str3.startsWith("判斷是不是")); //true
+
+        // ============ includes ============
+        // 該方法判斷一個字符串有沒有在另外一個字符串中
+        const str4 = "該方法判斷一個字符串有沒有在另外一個字符串中";
+        console.log( str4.includes("該方法")); //true
+        console.log( str4.includes("判斷")); //true
+        console.log( str4.includes("個字符串有沒有")); //true
+        console.log( str4.includes("123")); //false
+
+
+       
+       
+       
+
+
+
 
     </script>
 </body>
