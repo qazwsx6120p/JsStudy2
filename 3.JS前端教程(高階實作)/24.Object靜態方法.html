@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const o = { uname: "阿寶", age: 22 };
+        // 1.獲得所有的屬性名 語法:Object.keys(物件名)
+        console.log(Object.keys(o)); //返回陣列
+        // 2.獲取所有的屬性值 語法:Object.values(物件名)
+        console.log(Object.values(o)); //返回陣列
+
+        // 3.拷貝物件 語法:Object.assign(拷貝的空物件,要被拷貝的物件)
+        const obj = {};
+        Object.assign(obj, o)
+        console.log(obj);
+
+        // 常用狀況(添加屬性)
+        Object.assign(o, { gender: "女" });
+        console.log(o);
+
+    </script>
+</body>
+
+</html>

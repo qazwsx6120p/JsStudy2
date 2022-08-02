@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ============= find =============
+        // 如果有就返回該值，沒有就返回 undefined
+        const arr = ["red", "blue", "green"];
+        let re = arr.find((v, i) => {
+            return v === "blue"
+        })
+        console.log(re);
+
+        const arr2 = [
+            { name: "小米", price: 2000 },
+            { name: "埃鳳", price: 3999 },
+            { name: "索尼", price: 5000 }
+        ];
+
+        // 找小米這個物件，並且返回這個物件的第一個
+        let re2 = arr2.find((v, i) => {
+            return v.name === "小米"
+        })
+        console.log(re2);
+
+        // ============= every =============
+        // 測試陣列內所有元素是否都符合條件，返回布林值
+        const arr3 = [1, 2, 3, 4, 5];
+        let re3 = arr3.every((v) => {
+            return v < 6
+        });
+        console.log(re3);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // ============ splite ============
+        // splite()將string轉為arr 和 join()相反
+        const str = "hello world";
+        let strArr = str.split(" ") //<-分隔方式
+        console.log(strArr); // ['hello', 'world']
+
+        const str1 = "2022-4-8";
+        let strArr1 = str1.split("-") //<-分隔方式
+        console.log(strArr1); // ['2022', '4', '8']
+
+        // ============ substring ============
+        // substring()字符串的擷取 substring(開始的索引號,[結束的索引號])
+        // 如果省略結束索引，默認取到最後
+        const str2 ="今天晚上真好";
+        console.log(str2.substring(2,4)); //晚上
+
+    </script>
+</body>
+
+</html>

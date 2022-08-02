@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        const spec = { size: "40cm*40cm", color: "黑色" };
+        // 1.獲取所有屬性值
+        let valuesArr = Object.values(spec);
+        console.log(valuesArr);
+        // 2.轉換為字符串
+        let stValuesArr = valuesArr.join("/")
+        console.log(stValuesArr);
+        // 3.渲染
+        let div = document.querySelector("div")
+        div.innerHTML=stValuesArr
+    </script>
+</body>
+
+</html>

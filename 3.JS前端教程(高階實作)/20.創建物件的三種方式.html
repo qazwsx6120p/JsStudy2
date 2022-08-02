@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // -----創建物件第一種方式-----
+    const obj = {}
+
+    // -----創建物件第二種方式-----
+    const obj2 = new Object({ age: 18 });
+    obj.uname = "阿寶"
+    console.log(obj);
+
+    // -----創建物件第三種方式(構造函數)-----
+    // 函數用大寫開頭
+    // 只能用 new 操作符
+    // 創建一個豬 構造函數
+    function Pig(uname, age) {
+      // Pig調用所以this是Pig
+      this.uname = uname;
+      this.age = age;
+
+    }
+    const p1 = new Pig("小豬", 6);
+    const p2 = new Pig("喬治", 7);
+
+    console.log(p1);
+    console.log(p2);
+
+
+  </script>
+</body>
+
+</html>

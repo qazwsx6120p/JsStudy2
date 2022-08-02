@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // forEach:遍歷陣列(不返回，用於不改變值，經常用於查找打印輸出值)
+        // filter:過濾陣列(篩選陣列元素，生成新陣列)
+        // map:迭代陣列(返回新陣列，新陣列裡面的元素是處理過後的值，經常用於處理數據)
+        // reduce:累加器(返回函數累加處理的結果，經常用於求和)
+
+        // reduce用法
+        // arr.reduce((累積值,當前值)=>{},起始值)
+        // 起始值可以忽略，如果寫就作為第一次累加的起始值
+        // 如果沒有起始值就以陣列的第一個值為起始值
+
+        const arr = [1, 2, 3];
+        let sum1 = arr.reduce((pre, cur) => {
+            console.log(pre);
+            return pre + cur
+        }, 0)
+
+        let sum2 = arr.reduce((pre, cur) => {
+            console.log(pre);
+            return pre + cur
+        })
+
+        console.log(sum1,sum2);
+
+    </script>
+</body>
+
+</html>

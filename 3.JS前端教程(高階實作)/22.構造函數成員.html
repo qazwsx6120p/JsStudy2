@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 構造函數
+        function Goods(name, price, count) {
+            // 實例成員
+            this.name = name;
+            this.price = price;
+            this.count = count;
+            this.sayHi = function () {
+                console.log("你好");
+            }
+        }
+        let phone1 = new Goods("小米", 1999, 20);
+        let phone2 = new Goods("索尼", 6777, 30);
+        let sayHi = new Goods();
+        // 修改構造函數的值
+        phone2.name = "iphone"
+
+        // 添加構造函數的值
+        // 靜態成員
+        Goods.num = 10;
+        Goods.sayNo = function () { };
+
+        
+        console.log(Goods.num);
+        console.log(phone1, phone2, Goods.sayHi());
+    </script>
+</body>
+
+</html>
