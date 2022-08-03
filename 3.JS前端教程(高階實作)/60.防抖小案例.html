@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+          width: 500px;
+          height: 500px;
+          background-color: #ccc;
+          color: #fff;
+          text-align: center;
+          font-size: 100px;
+        }
+      </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+
+        // ----------在事件被觸發n秒後再執行回調，如果n秒內又被觸發則重新計時----------
+
+        const box = document.querySelector(".box")
+        let i = 1;
+
+        // 鼠標移動函數
+        function mouseMove() {
+            box.innerHTML = i++
+            // 如果裡面存在大量DOM事件可能會卡頓
+        }
+
+        function debounce(fn, t) {
+            let timeId
+            return function () {
+                // 如果有滑動就清除定時器
+                if (timeId) {
+                    clearTimeout(timeId)
+                }
+                // 開啟定時器 200
+                timeId = setTimeout(() => {
+                    // 只要沒滑動就開始計時
+                    fn()
+                }, t);
+            }
+        }
+        box.addEventListener("mousemove", debounce(mouseMove, 200))
+    </script>
+</body>
+
+</html>

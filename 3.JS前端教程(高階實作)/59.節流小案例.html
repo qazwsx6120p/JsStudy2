@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    const box = document.querySelector(".box")
+    let i = 1;
+
+    // 鼠標移動函數
+    function mouseMove() {
+      box.innerHTML = i++
+      // 如果裡面存在大量DOM事件可能會卡頓
+    }
+    // 節流函數 throttle
+    function throttle(fn, t) {
+      // 設定一個變數
+      let startTime = 0;
+      return function () {
+        // 這是事件一執行的時間戳
+        let now = Date.now();
+        // 如果現在的時間-開始時間 >= 500(t)
+        if (now - startTime >= t) {
+          // 調用mouseMove函數(事件經過500毫秒調用)
+          fn();
+          // 除了第一次是0以外，之後觸發的事件開始時間都是現在
+          startTime = now;
+        }
+
+      }
+    }
+    // 將鼠標滑動事件當成參數傳送給throttle函數
+    // 這裡也形成一個閉包
+    box.addEventListener("mousemove", throttle(mouseMove, 500))
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            age: 19,
+        }
+        function fn() {
+            console.log(this);
+        }
+        // 1.bind不會調用函數
+        // 2.能改變this指向
+        // 3.bind的返回值，是個函數裡面的this指向是更改過的obj
+        const fun = fn.bind(obj)
+        // console.log(fun);
+        fun() //obj
+    </script>
+</body>
+
+</html>

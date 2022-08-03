@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>發送短信</button>
+    <script>
+        // 需求有一個按鈕，點擊之後禁用，兩秒之後開啟
+        const btn = document.querySelector("button")
+        btn.addEventListener("click", function () {
+            // 進用按鈕
+            this.disabled = true
+
+            // 非同步執行，獲取不到當前物件內容。
+            // 這會導致這些程式碼中包含的 this 關鍵字會指向 
+            // window (或全域性)物件。
+            window.setTimeout(function () {
+                // 在這個普通函數內我們要this從window改為btn
+                this.disabled = false
+            }.bind(this), 2000)
+        })
+    </script>
+</body>
+
+</html>
