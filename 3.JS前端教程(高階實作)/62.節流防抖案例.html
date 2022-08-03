@@ -63,27 +63,29 @@
       <video src="https://v.itheima.net/LapADhV6.mp4" controls></video>
     </div>
     <div class="elevator">
-      <a href="javascript:;" data-ref="video">视频介绍</a>
-      <a href="javascript:;" data-ref="intro">课程简介</a>
-      <a href="javascript:;" data-ref="outline">评论列表</a>
+      <a href="javascript:;" data-ref="video">影片介紹</a>
+      <a href="javascript:;" data-ref="intro">課程介紹</a>
+      <a href="javascript:;" data-ref="outline">評論列表</a>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
   <script>
-    // 1. 获取元素  要对视频进行操作
-    const video = document.querySelector('video')
+    // 頁面打開可以記錄上一次影片撥放的位置
+
+    // 1.獲取影片元素
+    const video = document.querySelector("video");
+    // 影片播放事件
+    // 使用lodash的節流函數
     video.ontimeupdate = _.throttle(() => {
-      // console.log(video.currentTime) 获得当前的视频时间
-      // 把当前的时间存储到本地存储
-      localStorage.setItem('currentTime', video.currentTime)
+      // console.log(video.currentTime); 獲得當前的時間
+      // 將影片撥放的時間存到本機端
+      localStorage.setItem("currentTime", video.currentTime)
     }, 1000)
 
-    // 打开页面触发事件，就从本地存储里面取出记录的时间， 赋值给  video.currentTime
+    //  打開頁面觸發事件，就從本地紀錄時間，賦值給video.currentTime
     video.onloadeddata = () => {
-      // console.log(111)
-      video.currentTime = localStorage.getItem('currentTime') || 0
+      video.currentTime = localStorage.getItem("currentTime") || 0
     }
-
   </script>
 </body>
 
