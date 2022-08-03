@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const oldObj = {
+            uname: "pink",
+            age: 18
+        };
+        const newObj = {};
+        // 拷貝函數
+        function deepCopy(oldObj, newObj) { //函數調用兩個參數obj(舊),obj2(新)
+            for (let k in oldObj) { // k是屬性名 , obj[k]是屬性值
+
+                // obj2[k]目前沒有值，所以是屬性名
+                // obj[k]目前沒有值，所以是屬性名
+                
+                newObj[k] = oldObj[k];
+            }
+        }
+        deepCopy(oldObj, newObj);
+
+        
+        newObj.age = 20;
+        console.log(newObj);
+        console.log(oldObj);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            uname: 'pink',
+            age: 18,
+            hobby: ['乒乓球', '足球'],
+            family: {
+                baby: '小pink'
+            }
+        }
+        const o = {}
+        // 拷贝函数
+        function deepCopy(newObj, oldObj) {
+            debugger
+            for (let k in oldObj) {
+                // 處理陣列問題  一定先寫陣列 在寫 物件 不能颠倒
+                if (oldObj[k] instanceof Array) {
+                    newObj[k] = []
+                    //  newObj[k] 接收 []  hobby
+                    //  oldObj[k]   ['乒乓球', '足球']
+                    deepCopy(newObj[k], oldObj[k])
+                    
+                } else if (oldObj[k] instanceof Object) {
+                    newObj[k] = {}
+                    deepCopy(newObj[k], oldObj[k])
+                }
+                else {
+                    //  k  属性名 uname age    oldObj[k]  属性值  18
+                    // newObj[k]  === o.uname  給新物件添加屬性
+                    newObj[k] = oldObj[k]
+                }
+            }
+        }
+        deepCopy(o, obj) 
+        console.log(o)
+        o.age = 20
+        o.hobby[0] = '籃球'
+        o.family.baby = '老pink'
+        console.log(obj)
+        console.log([1, 23] instanceof Object)
+   
+    </script>
+</body>
+
+</html>

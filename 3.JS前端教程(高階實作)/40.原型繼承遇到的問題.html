@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -----將eyes,head抽取出來，創建一個構造函數來裝他(父類)-----
+        // 構造函數 new 出來的物件結構一樣，但物件地址不一樣  
+        function Person() { 
+            this.eyes = 2;
+            this.head = 1;
+        }
+
+        console.log(new Person()); 
+
+        // -----女人的構造函數(子類)-----
+        function Woman() {
+            // this.eyes = 2;
+            // this.head = 1;
+        }
+        // 向構造函數的原型內添加Person構造函數
+        Woman.prototype = new Person() 
+        // 指回原本的構造函數
+        Woman.prototype.constructor = Woman
+        const woman = new Woman();
+
+        // 給女人構造函數添加一個方法
+        Woman.prototype.baby = function () {
+            console.log("生小孩");
+        }
+
+        console.log(woman.eyes); //2
+        console.log(woman.__proto__);
+
+
+        // 因為共同繼承了Person物件(因為指向相同地址Person地址)，
+        // 所以男人構造函數也有baby方法
+        // -----男人的構造函數(子類)-----
+        function Man() {
+            // this.eyes = 2;
+            // this.head = 1;
+        }
+        Man.prototype = new Person(); //15行
+        Man.prototype.constructor = Man
+        // 向構造函數的原型內添加Person構造函數
+        const man = new Man();
+        console.log(man.head);
+        console.log(man.__proto__);
+
+
+
+    </script>
+</body>
+
+</html>

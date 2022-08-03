@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>面向对象封装消息提示</title>
+  <style>
+    .modal {
+      width: 300px;
+      min-height: 100px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      position: fixed;
+      z-index: 999;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      background-color: #fff;
+    }
+
+    .modal .header {
+      line-height: 40px;
+      padding: 0 10px;
+      position: relative;
+      font-size: 20px;
+    }
+
+    .modal .header i {
+      font-style: normal;
+      color: #999;
+      position: absolute;
+      right: 15px;
+      top: -2px;
+      cursor: pointer;
+    }
+
+    .modal .body {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .modal .footer {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+    }
+
+    .modal .footer a {
+      padding: 3px 8px;
+      background: #ccc;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 2px;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+
+    .modal .footer a.submit {
+      background-color: #369;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="delete">删除</button>
+  <button id="login">登录</button>
+
+  <!-- <div class="modal">
+    <div class="header">温馨提示 <i>x</i></div>
+    <div class="body">您没有删除权限操作</div>
+  </div> -->
+
+
+  <script>
+    // ----------1.靜態框的構造函數----------
+    function Modal(title = "", message = "") {
+      // 公共的部分:標題、提示訊息
+      this.title = title;
+      this.message = message;
+      // 因為盒子公共的
+      // 1.創建(一定不要忘了加this)
+      this.modalBox = document.createElement("div");
+      // 2.添加類名
+      this.modalBox.className = "modal";
+      // 3.填充內容(誰調用，用誰的title、message)
+      this.modalBox.innerHTML = `
+      <div class="modal">
+        <div class="header">${this.title}<i>x</i></div>
+        <div class="body">${this.message}</div>
+      </div>
+      `;
+      console.log(this.modalBox);
+    };
+    // ----------2.打開方法 掛載 靜態框的構造函數的原型身上----------
+    Modal.prototype.open = function () {
+      // 如果有這個盒子就不能再添加了
+      if (!document.querySelector(".modal")) {
+        // 把剛才創建的盒子modalBox 選染到頁面上
+        document.body.appendChild(this.modalBox)
+        // 綁定事件(按X)調用關閉方法
+        this.modalBox.querySelector("i").addEventListener("click", () => {
+          this.close()
+        })
+      }
+    }
+    // ----------3.關閉方法 掛載 靜態框的構造函數的原型身上----------
+    Modal.prototype.close = function () {
+      // 把剛才創建的盒子modalBox 把頁面上的盒子刪除
+      document.body.removeChild(this.modalBox)
+      // 獲取 x 調用關閉方法
+    }
+    // ----------4.按鈕點擊(刪除)----------
+    document.querySelector("#delete").addEventListener("click", function () {
+      // 點擊調用構造函數，並傳送實參
+      const m = new Modal("溫興提示", "您沒有權限刪除")
+      // 調用打開方法
+      m.open()
+    });
+
+    // ----------5.按鈕點擊(登陸)----------
+    document.querySelector("#login").addEventListener("click", function () {
+      // 點擊調用構造函數，並傳送實參
+      const m = new Modal("有情提示", "您還沒有註冊帳號")
+      // 調用打開方法
+      m.open()
+    });
+
+  </script>
+</body>
+
+</html>

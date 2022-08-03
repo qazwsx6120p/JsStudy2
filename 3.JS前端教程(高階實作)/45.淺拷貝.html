@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 淺拷貝，拷貝的是地址，沒辦法拷貝複雜類型(只拷貝外面一層)
+
+        const obj = {
+            uname: "阿寶",
+            age: 20,
+            family: {
+                baby: "小寶"
+            }
+        };
+        console.log(obj);
+
+        // ----------第一種淺拷貝(展開運算符)----------
+        const obj2 = { ...obj };
+        obj2.age = 30;
+        // 淺拷貝會把原物件也修改
+        obj2.family.baby="大寶"
+
+        console.log(obj2);
+
+        // ----------第二種淺拷貝(Object.assign)----------
+        const obj3 = {};
+        Object.assign(obj3, obj)
+        obj3.age = 30;
+        console.log(obj3);
+
+
+
+
+    </script>
+</body>
+
+</html>

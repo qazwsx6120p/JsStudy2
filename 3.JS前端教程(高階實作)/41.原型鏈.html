@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // JS底層有一個最大的構造函數Object
+        // function Object() {
+
+        // }
+        function Person() {
+
+        }
+        const person1 = new Person();
+        console.log("物件原型跟構造函數原型物件:" + (person1.__proto__ === Person.prototype));
+        // 所有物件的物件原型都指向Object構造函數(JS裡最大的構造函數)
+        console.log("構造函數原型的原型指向:" + (Person.prototype.__proto__ === Object.prototype));
+
+        // 實例物件的原型最多找三層
+        console.log(person1.__proto__); //指向構造函數的原型,Person.prototype
+        console.log(person1.__proto__.__proto__); //指向構造函數的原型的原型Object(JS裡最大的構造函數).prototype
+        console.log(person1.__proto__.__proto__.__proto__); //null (在網上找沒有了)
+
+
+    </script>
+</body>
+
+</html>

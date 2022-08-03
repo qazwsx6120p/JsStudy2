@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 自己調用自己(遞歸函數)
+        // 記得+return退出函數(不然會變死循環)
+        let i = 1;
+        function fn() {
+            console.log(`這是第${i}次`);
+            if (i >= 6) {
+                return;
+            }
+            i++
+            fn()
+        }
+        fn()
+
+    </script>
+</body>
+
+</html>
